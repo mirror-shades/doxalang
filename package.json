@@ -1,0 +1,25 @@
+{
+  "name": "doxalang",
+  "displayName": "Doxalang",
+  "description": "support for the Doxa programming language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "doxa",
+      "aliases": ["Doxa", "doxa"],
+      "extensions": [".doxa"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "doxa",
+      "scopeName": "source.doxa",
+      "path": "./syntaxes/doxa.tmLanguage.json"
+    }]
+  }
+}
