@@ -1,32 +1,147 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Doxa",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.doxa",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.doxa",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.doxa",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "source.doxa"
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Doxa",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#builtins"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#literals"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.doxa",
+          "match": "\\b(if|iff|then|else|while|do|for|each|in|at|match|break|continue|return|returns)\\b"
+        },
+        {
+          "name": "keyword.declaration.doxa",
+          "match": "\\b(var|const|function|method|struct|enum|map|union|array|public|private|async|await|entry)\\b"
+        },
+        {
+          "name": "keyword.operator.doxa",
+          "match": "\\b(and|or|not|xor|where|from|as|to|exists|forall|not_paradoxical)\\b"
+        },
+        {
+          "name": "keyword.import.doxa",
+          "match": "\\b(import|module|from|as)\\b"
+        },
+        {
+          "name": "keyword.other.doxa",
+          "match": "\\b(this|range)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.arithmetic.doxa",
+          "match": "\\+\\+|--|\\+\\+|=|\\+=|-=|\\*\\*=|\\*\\*|\\*=|\\*|/=|/|%|\\^"
+        },
+        {
+          "name": "keyword.operator.comparison.doxa",
+          "match": "==|!=|<=|>=|<|>|="
+        },
+        {
+          "name": "keyword.operator.logical.doxa",
+          "match": "&&|\\|\\||!"
+        },
+        {
+          "name": "punctuation.delimiter.doxa",
+          "match": "[\\[\\]{}();,]"
+        }
+      ]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "support.function.builtin.doxa",
+          "match": "@(type|length|push|pop|print|string|int|float|byte|insert|remove|slice|assert|panic|input|os|arch|time|tick|exit|sleep|random|spawn|kill|wait|alive|read|write)\\b"
+        },
+        {
+          "name": "support.type.builtin.doxa",
+          "match": "\\b(string|int|float|tetra|nothing|byte)\\b"
+        },
+        {
+          "name": "support.type.array.doxa",
+          "match": "\\b(string|int|float|tetra)(\\[\\])+\\b"
+        },
+        {
+          "name": "support.type.custom.doxa",
+          "match": "\\b[A-Z][a-zA-Z0-9_]*\\b"
+        },
+        {
+          "name": "support.type.custom.array.doxa",
+          "match": "\\b[A-Z][a-zA-Z0-9_]*(\\[\\])+\\b"
+        },
+        {
+          "name": "constant.language.builtin.doxa",
+          "match": "\\b(true|false|null|undefined|PI|E|MAX_INT|MIN_INT|MAX_FLOAT|MIN_FLOAT)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.doxa",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.doxa",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.doxa",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.doxa",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "literals": {
+      "patterns": [
+        {
+          "name": "constant.numeric.integer.doxa",
+          "match": "\\b\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.float.doxa",
+          "match": "\\b\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.hex.doxa",
+          "match": "\\b0x[0-9a-fA-F]+\\b"
+        },
+        {
+          "name": "constant.language.boolean.doxa",
+          "match": "\\b(true|false|both|neither)\\b"
+        },
+        {
+          "name": "constant.language.null.doxa",
+          "match": "\\b(nothing)\\b"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.doxa"
 }

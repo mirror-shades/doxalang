@@ -1,65 +1,72 @@
-# doxalang README
+# Doxalang - VS Code Extension for Doxa
 
-This is the README for your extension "doxalang". After writing up a brief description, we recommend including the following sections.
+Full language support for the [Doxa programming language](https://github.com/mirror-shades/doxa) in Visual Studio Code, featuring syntax highlighting and Language Server Protocol (LSP) integration for real-time diagnostics.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- **Syntax Highlighting**: Comprehensive highlighting for all Doxa language constructs
+- **Real-time Diagnostics**: LSP-powered error checking and warnings as you type
+- **Language Support**: Full recognition of `.doxa` files with proper language features
+- **Bracket Matching**: Automatic bracket highlighting and auto-closing
+- **Comment Support**: Line (`//`) and block (`/* */`) comment highlighting
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- [Doxa compiler](https://github.com/mirror-shades/doxa) built and available
+- The extension expects the Doxa binary to be located at `../doxa/zig-out/bin/doxa.exe` relative to the extension directory
 
-## Extension Settings
+## Installation
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### From Source
 
-For example:
+1. Clone this repository alongside your Doxa compiler:
+   ```
+   C:\dev\zig\
+   ├── doxa\        # Your Doxa compiler
+   └── doxalang\    # This extension
+   ```
 
-This extension contributes the following settings:
+2. Build the Doxa compiler:
+   ```bash
+   cd doxa
+   zig build
+   ```
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+3. Install extension dependencies and compile:
+   ```bash
+   cd ../doxalang
+   npm install
+   npm run compile
+   ```
+
+4. Install the extension in VS Code:
+   - Open VS Code
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
+   - Type "Extensions: Install from VSIX"
+   - Select the generated `.vsix` file
+
+### Testing
+
+- Press `F5` to open a new VS Code window with the extension loaded
+- Create a new `.doxa` file
+- Verify syntax highlighting and LSP diagnostics work
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- LSP server path is currently hardcoded relative to extension location
+- May need to adjust path if Doxa binary is installed elsewhere
+
+## Contributing
+
+1. Make changes to `src/extension.ts`
+2. Run `npm run compile` to build
+3. Test with `F5` in VS Code
+4. Submit a pull request
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- Initial release with syntax highlighting and LSP integration
+- Support for real-time diagnostics
+- Comprehensive TextMate grammar for Doxa syntax
