@@ -1,6 +1,6 @@
 # Doxalang - VS Code Extension for Doxa
 
-Language support for the [Doxa programming language](https://github.com/mirror-shades/doxa) in Visual Studio Code, featuring syntax highlighting and Language Server Protocol (LSP).
+Language support for the [Doxa programming language](https://github.com/mirror-shades/doxa) in Visual Studio Code, featuring syntax highlighting and Language Server Protocol (LSP). This works in any ide with generic vsix support for LSPs, including Cursor.
 
 ## Features
 
@@ -39,11 +39,10 @@ Language support for the [Doxa programming language](https://github.com/mirror-s
    npm run compile
    ```
 
-4. Install the extension in VS Code:
-   - Open VS Code
-   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
-   - Type "Extensions: Install from VSIX"
-   - Select the generated `.vsix` file
+4. Install the extension:
+   - Open your ide
+   - Open the extensions explorer (ctrl+b)
+   - Drag the .vsix file in
 
 
 ## Release Notes
