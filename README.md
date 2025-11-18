@@ -1,6 +1,6 @@
 # Doxalang - VS Code Extension for Doxa
 
-Full language support for the [Doxa programming language](https://github.com/mirror-shades/doxa) in Visual Studio Code, featuring syntax highlighting and Language Server Protocol (LSP) integration for real-time diagnostics.
+Language support for the [Doxa programming language](https://github.com/mirror-shades/doxa) in Visual Studio Code, featuring syntax highlighting and Language Server Protocol (LSP).
 
 ## Features
 
@@ -13,7 +13,7 @@ Full language support for the [Doxa programming language](https://github.com/mir
 ## Requirements
 
 - [Doxa compiler](https://github.com/mirror-shades/doxa) built and available
-- The extension expects the Doxa binary to be located at `../doxa/zig-out/bin/doxa.exe` relative to the extension directory
+- The extension expects the Doxa binary to be located at `doxa` in system path
 
 ## Installation
 
@@ -45,23 +45,6 @@ Full language support for the [Doxa programming language](https://github.com/mir
    - Type "Extensions: Install from VSIX"
    - Select the generated `.vsix` file
 
-### Testing
-
-- Press `F5` to open a new VS Code window with the extension loaded
-- Create a new `.doxa` file
-- Verify syntax highlighting and LSP diagnostics work
-
-## Known Issues
-
-- LSP server path is currently hardcoded relative to extension location
-- May need to adjust path if Doxa binary is installed elsewhere
-
-## Contributing
-
-1. Make changes to `src/extension.ts`
-2. Run `npm run compile` to build
-3. Test with `F5` in VS Code
-4. Submit a pull request
 
 ## Release Notes
 
