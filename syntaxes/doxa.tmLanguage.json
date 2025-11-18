@@ -3,6 +3,12 @@
   "name": "Doxa",
   "patterns": [
     {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
       "include": "#keywords"
     },
     {
@@ -10,12 +16,6 @@
     },
     {
       "include": "#builtins"
-    },
-    {
-      "include": "#strings"
-    },
-    {
-      "include": "#comments"
     },
     {
       "include": "#literals"
@@ -108,11 +108,11 @@
     "comments": {
       "patterns": [
         {
-          "name": "comment.line.double-slash.doxa",
-          "match": "//.*$"
+          "name": "comment.line.double-slash",
+          "match": "//.*"
         },
         {
-          "name": "comment.block.doxa",
+          "name": "comment.block",
           "begin": "/\\*",
           "end": "\\*/"
         }
