@@ -26,7 +26,7 @@
       "patterns": [
         {
           "name": "keyword.control.doxa",
-          "match": "\\b(if|iff|then|else|while|do|for|each|in|at|match|break|continue|return|returns)\\b"
+          "match": "\\b(is|if|iff|then|else|while|do|for|each|in|at|match|break|continue|return|returns|unreachable)\\b"
         },
         {
           "name": "keyword.declaration.doxa",
@@ -34,7 +34,7 @@
         },
         {
           "name": "keyword.operator.doxa",
-          "match": "\\b(and|or|not|xor|where|from|as|to|exists|forall|not_paradoxical)\\b"
+          "match": "\\b(and|or|not|xor|where|from|as|to|exists|forall)\\b"
         },
         {
           "name": "keyword.import.doxa",
@@ -42,7 +42,7 @@
         },
         {
           "name": "keyword.other.doxa",
-          "match": "\\b(this|range)\\b"
+          "match": "\\b(this|to)\\b"
         }
       ]
     },
@@ -50,7 +50,7 @@
       "patterns": [
         {
           "name": "keyword.operator.arithmetic.doxa",
-          "match": "\\+\\+|--|\\+\\+|=|\\+=|-=|\\*\\*=|\\*\\*|\\*=|\\*|/=|/|%|\\^"
+          "match": "\\+\\+|--|\\+\\+|=|\\+=|-=|\\*\\*=|\\*\\*|\\*=|\\*|/=|/|%|\\^|~"
         },
         {
           "name": "keyword.operator.comparison.doxa",
@@ -59,6 +59,26 @@
         {
           "name": "keyword.operator.logical.doxa",
           "match": "&&|\\|\\||!"
+        },
+        {
+          "name": "keyword.operator.type.doxa",
+          "match": "::"
+        },
+        {
+          "name": "keyword.operator.union.doxa",
+          "match": "\\|"
+        },
+        {
+          "name": "keyword.operator.peek.doxa",
+          "match": "\\?"
+        },
+        {
+          "name": "keyword.operator.logical.unicode.doxa",
+          "match": "[∃∀¬↔⊕∧∨↑↓→∈]"
+        },
+        {
+          "name": "keyword.operator.ellipsis.doxa",
+          "match": "\\.\\.\\."
         },
         {
           "name": "punctuation.delimiter.doxa",
