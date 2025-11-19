@@ -30,19 +30,19 @@
         },
         {
           "name": "keyword.declaration.doxa",
-          "match": "\\b(var|const|function|method|struct|enum|map|union|array|public|private|async|await|entry)\\b"
+          "match": "\\b(var|const|function|method|struct|enum|map|union|array|pub|entry)\\b"
         },
         {
           "name": "keyword.operator.doxa",
-          "match": "\\b(and|or|not|xor|where|from|as|to|exists|forall)\\b"
+          "match": "\\b(and|or|not|xor|where|exists|forall)\\b"
         },
         {
           "name": "keyword.import.doxa",
-          "match": "\\b(import|module|from|as)\\b"
+          "match": "\\b(import|module|from)\\b"
         },
         {
           "name": "keyword.other.doxa",
-          "match": "\\b(this|to)\\b"
+          "match": "\\b(this|to|as)\\b"
         }
       ]
     },
@@ -115,13 +115,27 @@
       ]
     },
     "strings": {
-      "name": "string.quoted.double.doxa",
-      "begin": "\"",
-      "end": "\"",
       "patterns": [
         {
-          "name": "constant.character.escape.doxa",
-          "match": "\\\\."
+          "name": "string.quoted.double.doxa",
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.doxa"
+            }
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.doxa"
+            }
+          },
+          "patterns": [
+            {
+              "name": "constant.character.escape.doxa",
+              "match": "\\\\."
+            }
+          ]
         }
       ]
     },
