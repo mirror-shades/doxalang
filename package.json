@@ -2,17 +2,17 @@
   "name": "doxalang",
   "displayName": "Doxalang",
   "description": "Language support for the Doxa programming language with LSP integration",
-  "version": "0.0.1",
+  "version": "0.3.12-alpha",
   "engines": {
     "vscode": "^1.96.0"
   },
   "categories": [
     "Programming Languages"
   ],
+  "main": "./out/extension.js",
   "activationEvents": [
     "onLanguage:doxa"
   ],
-  "main": "./out/extension.js",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",

@@ -19,36 +19,18 @@ Language support for the [Doxa programming language](https://github.com/mirror-s
 
 ### From Source
 
-1. Clone this repository alongside your Doxa compiler:
-   ```
-   C:\dev\zig\
-   ├── doxa\        # Your Doxa compiler
-   └── doxalang\    # This extension
-   ```
 
-2. Build the Doxa compiler:
+1. Install extension dependencies and compile:
    ```bash
-   cd doxa
-   zig build
-   ```
-
-3. Install extension dependencies and compile:
-   ```bash
-   cd ../doxalang
    npm install
    npm run compile
+   npm install -g @vscode/vsce
+   vsce package
    ```
 
-4. Install the extension:
+1. Install the extension:
    - Open your ide
    - Open the extensions explorer (ctrl+b)
    - Drag the .vsix file in
 
 
-## Release Notes
-
-### 0.0.1
-
-- Initial release with syntax highlighting and LSP integration
-- Support for real-time diagnostics
-- Comprehensive TextMate grammar for Doxa syntax
