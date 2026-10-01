@@ -2,7 +2,12 @@
   "name": "doxalang",
   "displayName": "Doxalang",
   "description": "Language support for the Doxa programming language with LSP integration",
-  "version": "0.3.12-alpha",
+  "version": "0.4.1-alpha",
+  "publisher": "mirror-shades",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mirror-shades/doxalang.git"
+  },
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -11,7 +16,8 @@
   ],
   "main": "./out/extension.js",
   "activationEvents": [
-    "onLanguage:doxa"
+    "onLanguage:doxa",
+    "onCommand:doxa.restartServer"
   ],
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -38,6 +44,36 @@
       "language": "doxa",
       "scopeName": "source.doxa",
       "path": "./syntaxes/doxa.tmLanguage.json"
-    }]
+    }],
+    "commands": [{
+      "command": "doxa.restartServer",
+      "title": "Restart Language Server",
+      "category": "Doxa"
+    }],
+    "configuration": {
+      "title": "Doxa",
+      "properties": {
+        "doxa.serverPath": {
+          "type": "string",
+          "default": "",
+          "scope": "window",
+          "markdownDescription": "Absolute path to the Doxa language-server executable. When empty, the extension looks for `doxa/bin`, `zig-out/bin`, `bin`, then `doxa` on `PATH`. Accepts a workspace-relative path."
+        },
+        "doxa.trace.server": {
+          "type": "string",
+          "enum": ["off", "messages", "verbose"],
+          "default": "off",
+          "scope": "window",
+          "markdownDescription": "Trace the communication between VS Code and the Doxa language server. Written to the **Doxa LSP Trace** output channel."
+        }
+      }
+    },
+    "configurationDefaults": {
+      "[doxa]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.detectIndentation": false
+      }
+    }
   }
 }

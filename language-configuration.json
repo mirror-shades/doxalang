@@ -1,8 +1,8 @@
 {
   "comments": {
-    // symbol used for single line comment. Remove this entry if your language does not support line comments
+    // Doxa line comments start with `#`. `//` is the integer-division operator,
+    // not a comment.
     "lineComment": "#",
-    // symbols used for start and end a block comment. Remove this entry if your language does not support block comments
     "blockComment": ["/*", "*/"]
   },
   // symbols used as brackets
@@ -24,5 +24,28 @@
     { "open": "[", "close": "]" },
     { "open": "(", "close": ")" },
     { "open": "\"", "close": "\"" }
-  ]
+  ],
+  // Indent inside `{ ... }`; Doxa has no significant whitespace beyond blocks.
+  "indentationRules": {
+    "increaseIndentPattern": "\\{[^}]*$",
+    "decreaseIndentPattern": "^\\s*\\}"
+  },
+  // Continue block comments and keep the ` * ` gutter aligned.
+  "onEnterRules": [
+    {
+      "beforeText": "^\\s*/\\*.*$",
+      "afterText": "^\\s*\\*/\\s*$",
+      "action": { "indent": "none" }
+    },
+    {
+      "beforeText": "^\\s*/\\*.*$",
+      "action": { "indent": "none", "appendText": " * " }
+    },
+    {
+      "beforeText": "^\\s*\\*.*$",
+      "action": { "indent": "none", "appendText": "* " }
+    }
+  ],
+  // Treat `@builtin` as a single word for selection and word-based motions.
+  "wordPattern": "(@?[A-Za-z_][A-Za-z0-9_]*)|([0-9]+(\\.[0-9]+)?)"
 }

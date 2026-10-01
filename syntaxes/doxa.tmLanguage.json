@@ -65,7 +65,7 @@
     "definition-type": {
       "patterns": [
         {
-          "match": "\\b(struct|enum|map)\\s+([A-Z]\\w*)",
+          "match": "\\b(struct|enum|map|group)\\s+([A-Z]\\w*)",
           "captures": {
             "1": { "name": "storage.type.doxa" },
             "2": { "name": "entity.name.type.doxa" }
@@ -136,7 +136,7 @@
         },
         {
           "name": "storage.type.doxa",
-          "match": "\\b(struct|enum|map|union|array)\\b"
+          "match": "\\b(struct|enum|map|group|union|array)\\b"
         },
         {
           "name": "storage.type.function.doxa",
@@ -148,7 +148,15 @@
         },
         {
           "name": "storage.modifier.doxa",
-          "match": "\\b(pub|entry)\\b"
+          "match": "\\b(public|pub|entry)\\b"
+        },
+        {
+          "name": "storage.modifier.inline-zig.doxa",
+          "match": "\\b(zig)\\b"
+        },
+        {
+          "name": "keyword.other.modifier.doxa",
+          "match": "\\b(async|await|defer|lift)\\b"
         },
         {
           "name": "variable.language.this.doxa",
@@ -205,6 +213,10 @@
         {
           "name": "keyword.operator.comparison.doxa",
           "match": "==|!=|<=|>=|<|>"
+        },
+        {
+          "name": "keyword.operator.arithmetic.integer-division.doxa",
+          "match": "//"
         },
         {
           "name": "keyword.operator.arithmetic.doxa",
